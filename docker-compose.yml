@@ -1,0 +1,55 @@
+version: '2'
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: docker.io/bitnami/mariadb:10.6
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=daniel
+      - MARIADB_DATABASE=wallamotop
+#    volumes:
+ #     - mariadb_data:/bitnami/mariadb/data    
+
+    networks:
+      - wallamotop_network
+
+  myapp:
+    container_name: wallamotop
+    image: docker.io/bitnami/laravel:10
+    ports:
+      - '8000:8000'
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=daniel
+      - DB_DATABASE=wallamotop
+    volumes:
+      - './app:/opt/bitnami/laravel' 
+      - './app/entrypoint.sh:/opt/bitnami/scripts/laravel/entrypoint.sh'    
+#      - './app/storage/app/public/imagenes:/opt/bitnami/laravel/storage/app/public/imagenes' 
+    depends_on:
+      - mariadb
+    networks:
+      - wallamotop_network
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mariadb:db
+    ports:
+      - '8080:80'
+    environment:
+      - PMA_HOST=mariadb
+      - MYSQL_USER=daniel
+      - MYSQL_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=
+    networks:
+      - wallamotop_network
+#volumes:
+ # mariadb_data:
+
+networks:
+  wallamotop_network:
+    driver: bridge

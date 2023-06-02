@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+/*body{
+	background: #F5F1EE;
+	font-family: 'Roboto', sans-serif;
+}
+.card{
+	width: 250px;
+	border-radius: 10px;
+}
+
+.card-img-top{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+span.text-muted{
+	font-size: 12px;
+}
+small.text-muted{
+	font-size: 8px;
+}
+h5.mb-0{
+	font-size: 1rem;
+}
+small.ghj{
+	font-size: 9px;
+}
+.mid{
+	background: #ECEDF1;
+}
+h6.ml-1{
+	font-size: 13px;
+}
+small.key{
+	text-decoration: underline;
+	font-size: 9px;
+	cursor: pointer;
+}
+.btn-danger{
+	color: #FFCBD2;
+}
+.btn-danger:focus{
+	box-shadow: none;
+}
+small.justify-content-center{
+	font-size: 9px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+@media screen and (max-width:600px){
+    .col-sm-4{
+        margin-bottom: 50px;
+    }
+} */
+
+
+body {
+	background-image: url("../images/login/manillar.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+  }
+  
+
+/* Estilos para el video de fondo */
+#video-section {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+  }
+
+  #video-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+
+  /* Estilos para el eslogan superpuesto */
+  #slogan {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	font-size: 32px;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	font-family: 'Dancing Script', cursive;
+  }
+/* Estilos base */
+.navbar {
+	background-color: black;
+	overflow: hidden;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -4%;
+}
+
+.navbar a {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 24px;
+	padding: 14px 20px;
+	margin: 0 10px;
+}
+
+.navbar a:hover {
+	background-color: #ddd;
+	color: black;
+	border-radius: 10px;
+}
+
+.navbar a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.navbar a.home::before {
+	content: "\f015";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	margin-right: 5px;
+	padding-right: 10px;
+}
+
+.navbar a.contact {
+	padding-left: 10px;
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 768px) {
+	.navbar {
+		height: auto;
+		flex-direction: column;
+	}
+
+	.navbar a {
+		margin: 5px 10px;
+	}
+}
+
+/*-----------------------------------------------------------------*/
+
+.features {
+	padding: 5%;
+	background-color: white;
+  }
+  
+  .container {
+	display: flex;
+	flex-wrap: wrap;
+  }
+  
+  .heading-setion-w3ls {
+	flex: 1 1 100%;
+	margin-bottom: 5%;
+  }
+  
+  .title-w3layouts {
+	/* font-size: 80%; */
+	font-size: xxx-large;
+	text-align: left;
+	color: red;
+  }
+  
+  .servies-agileinfo {
+	flex: 1 1 50%;
+  }
+  
+  .pink-w3ls {
+	/* font-size: 18px; */
+	font-size: x-large;
+	font-weight: bold;
+  }
+  
+  .para-w3agileits {
+	margin-top: 10px;
+  }
+  
+  ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+  }
+
+  li
+  {
+	font-size: larger;
+  }
+  
+  .fa {
+	margin-right: 10px;
+  }
+  
+  .clearfix {
+	clear: both;
+  }
+  
+  #segunda 
+  {
+	padding-left: 10%;
+  }
+
+  /*--------------------------------------------------------*/
+  .sale-w3ls {
+	background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor de 0.5 para cambiar la opacidad */
+  }
+  
+  .sale-w3ls .container {
+	color: white; /* Ajusta el color del texto para que sea legible en el fondo transparente */
+  }
+
+  

@@ -1,0 +1,11 @@
+{
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "remote.SSH.remotePlatform": {
+        "ec2-184-73-17-75.compute-1.amazonaws.com": "linux",
+        "azure": "linux",
+        "ubuntu2": "linux",
+        "tfg": "linux"
+    }
+}

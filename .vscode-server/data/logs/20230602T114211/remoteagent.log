@@ -1,0 +1,22 @@
+2023-06-02 11:42:11.692 [info] 
+
+
+
+
+2023-06-02 11:42:11.692 [info] Extension host agent started.
+2023-06-02 11:42:11.708 [info] Started initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.vscode-server/extensions
+2023-06-02 11:42:11.809 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/ubuntu/.vscode-server/extensions
+2023-06-02 11:42:11.947 [info] [127.0.0.1][395b05f4][ManagementConnection] New connection established.
+2023-06-02 11:42:12.156 [info] [127.0.0.1][897b23af][ExtensionHostConnection] New connection established.
+2023-06-02 11:42:12.161 [info] [127.0.0.1][897b23af][ExtensionHostConnection] <1617> Launched Extension Host Process.
+2023-06-02 11:47:11.635 [info] New EH opened, aborting shutdown
+2023-06-02 11:51:35.929 [info] [127.0.0.1][395b05f4][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2023-06-02 11:51:35.963 [info] [127.0.0.1][897b23af][ExtensionHostConnection] <1617> Extension Host Process exited with code: 0, signal: null.
+2023-06-02 11:51:35.963 [info] Last EH closed, waiting before shutting down
+2023-06-02 11:51:39.347 [info] Got delay-shutdown request while in shutdown timeout, delaying
+2023-06-02 11:51:39.348 [info] Cancelling previous shutdown timeout
+2023-06-02 11:51:40.041 [info] [127.0.0.1][7d8ddf76][ManagementConnection] New connection established.
+2023-06-02 11:51:40.141 [info] [127.0.0.1][10a55cf5][ExtensionHostConnection] New connection established.
+2023-06-02 11:51:40.147 [info] [127.0.0.1][10a55cf5][ExtensionHostConnection] <13520> Launched Extension Host Process.
+2023-06-02 11:56:39.348 [info] New EH opened, aborting shutdown
+2023-06-02 12:45:57.803 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted
