@@ -11,6 +11,8 @@ use Stripe\Charge;
 use App\Models\User;
 use App\Models\Bid;
 use App\Models\Moto;
+use Illuminate\Support\Facades\Auth;
+
 
 class SessionsController extends Controller
 {
@@ -82,7 +84,8 @@ class SessionsController extends Controller
 
         
         $moto->update([
-            'highest_bid'=>$request->highest_bid
+            'highest_bid'=>$request->highest_bid,
+            'highest_bid_user_id'=>auth()->id(),
         ]);
 
         $bid = Bid::create([

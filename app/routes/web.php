@@ -31,50 +31,50 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->name('login.dest
 
 //                                          nombre del metodo al que redirijimos
 Route::get('/admin', [AdminController::class, 'index'])
-    // ->middleware('auth.admin')
+    ->middleware('auth.admin')
     ->name('admin.index');
 
 
 Route::get('/admin/upload', [AdminController::class, 'create'])
-    // ->middleware('auth.admin')
+    ->middleware('auth.admin')
     ->name('admin.upload');
 
 Route::post('admin/upload', [AdminController::class, 'uploadData'])
-    // ->middleware('auth.admin')
+    ->middleware('auth.admin')
     ->name('admin.uploadData');
 
 
 //las mostraré en mi vista raíz
 Route::get('/', [SessionsController::class, 'mostrarMotos'])
-    // ->middleware('auth')            //middleware authenticate
+    ->middleware('auth')            //middleware authenticate
     ->name('user.mostrarMotos');
 
 
 //ruta dinamica para crear la vista de cada moto individual
 Route::get('/{moto:id}', [SessionsController::class, 'show'])
-    // ->middleware('auth')
+    ->middleware('auth')
     ->name('moto.show');
 
 //Ruta para mostrar una moto en la vista del administrador 
 Route::get('/{motos:id}', [AdminController::class, 'showAdmin'])
-    // ->middleware('auth')
+    ->middleware('auth')
     ->name('motoAdmin.show');
 
 
 //Ruta para eliminar una moto
 Route::delete('/motos/{moto:id}/delete', [AdminController::class, 'delete'])
-    // ->middleware('auth')
+    ->middleware('auth')
     ->name('motoAdmin.delete');
 
 
 //Ruta para modificar los datos de una moto
 Route::get('/motos/{moto}/edit', [AdminController::class, 'edit'])
-    // ->middleware('auth')
+    ->middleware('auth')
     ->name('motoAdmin.edit');
 
 
 Route::put('/motos/{moto}', [AdminController::class, 'update'])
-    // ->middleware('auth')
+    ->middleware('auth')
     ->name('motoAdmin.update');
     
 
@@ -84,7 +84,7 @@ Route::put('/motos/{moto}', [AdminController::class, 'update'])
 //     ->name('moto.bid');
 
 Route::post('/moto/{moto}', [SessionsController::class, 'madebid'])
-    // ->middleware('auth')
+    ->middleware('auth')
     ->name('moto.madebid');
 
 

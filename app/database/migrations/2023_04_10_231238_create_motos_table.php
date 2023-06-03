@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('motos', function (Blueprint $table) {
             $table->id();
@@ -17,14 +17,12 @@ return new class extends Migration
             $table->text('description');
             $table->integer('starting_price');
             $table->text('category');
-            $table->integer('highest_bid')->nullable(); 
-            $table->dateTime('ending_date')->nullable(); 
+            $table->integer('highest_bid')->nullable();
+            $table->unsignedBigInteger('highest_bid_user_id')->nullable();
+            $table->dateTime('ending_date')->nullable();
             $table->timestamps();
-
-
         });
-
-
+        
     }
 
     /**

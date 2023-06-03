@@ -69,8 +69,16 @@
                                         <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#exampleModalCenter">Pujar </button>
                                     </div>
                                     <div class="col-lg-6">
-                                        <a href="#" class="btn btn-success w-100">Añadir</a>
+                                        @if (auth()->check() && $moto->highest_bid_user_id === auth()->id())
+                                            <a href="#" id="btnAnadir" class="btn btn-success w-100">Anadir</a>
+                                        @else
+                                            <a href="#" class="btn btn-success w-100 disabled">AAnadir</a>
+                                        @endif
                                     </div>
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -167,7 +175,7 @@
             clearInterval(x{{ $moto->id }});
             document.getElementById("cuenta-{{ $moto->id }}").innerHTML = "Subasta cerrada";
             document.getElementById("info-{{ $moto->id }}").style.display = "block"; // Mostrar información adicional
-            ended{{ $moto->id }} = true;
+    
         }
     }, 1000);
     

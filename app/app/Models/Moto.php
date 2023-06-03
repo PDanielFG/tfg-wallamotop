@@ -15,6 +15,7 @@ class Moto extends Model
         'category',
         'starting_price',
         'highest_bid', 
+        'highest_bid_user_id',
         'ending_date'
     ];
 
