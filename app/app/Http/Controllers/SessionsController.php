@@ -14,6 +14,7 @@ use App\Models\Moto;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class SessionsController extends Controller
 {
     public function create()

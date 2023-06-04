@@ -70,11 +70,13 @@
                                     </div>
                                     <div class="col-lg-6">
                                         @if (auth()->check() && $moto->highest_bid_user_id === auth()->id())
-                                            <a href="#" id="btnAnadir" class="btn btn-success w-100">Anadir</a>
+                                            <a href="#" id="btnAnadir" class="disabled btn btn-success w-100">Comprar</a>
                                         @else
-                                            <a href="#" class="btn btn-success w-100 disabled">AAnadir</a>
+                                            <a href="#" class="btn btn-success w-100 disabled">Comprar</a>
                                         @endif
                                     </div>
+
+
 
 
 
@@ -170,12 +172,19 @@
         // Actualizamos el elemento HTML correspondiente
         document.getElementById("cuenta-{{ $moto->id }}").innerHTML = countdown{{ $moto->id }};
         
+
+
+
         // Si el contador llega a cero, lo detenemos y actualizamos la vista
         if (distance{{ $moto->id }} < 0) {
             clearInterval(x{{ $moto->id }});
             document.getElementById("cuenta-{{ $moto->id }}").innerHTML = "Subasta cerrada";
-            document.getElementById("info-{{ $moto->id }}").style.display = "block"; // Mostrar información adicional
-    
+            // document.getElementById("info-{{ $moto->id }}").style.display = "block"; // Mostrar información adicional
+            
+            console.log("Llegó al código para eliminar la clase 'hidden'");
+            var btnAnadir = document.getElementById("btnAnadir");
+            btnAnadir.classList.remove("disabled");
+
         }
     }, 1000);
     
