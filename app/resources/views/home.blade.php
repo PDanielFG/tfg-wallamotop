@@ -33,16 +33,18 @@
 
     <!--NAVBAR-->
     <div class="navbar">
-        <a id="casa" class="fas fa-home" href=""></a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#buy">Buy</a>
-        <a href="#pages">Pages</a>
-        <a id="contact" href="#contact">Contact</a>
+        <a href="#video-section" class="fas fa-home" onclick="scrollOnClick(event, 'casa')"></a>
+        <a href="#about" onclick="scrollOnClick(event, 'about')">About</a>
+        <!-- <a href="#gallery">Gallery</a> -->
+        <a href="#content" onclick="scrollOnClick(event, 'content')">Buy</a>
+        <!-- <a href="#pages">Pages</a> -->
+        <a href="#contact" onclick="scrollOnClick(event, 'contact')">Contact</a>
+        <a href="{{ route('login.index') }}">Salir</a>
     </div>
 
 
-    <div class="features">
+
+    <div id="about" class="features">
         <div class="container">
         <!---728x90--->
     
@@ -153,51 +155,12 @@
 
 
 <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4 mt-5 bg-white">
-
-  <!-- Footer Elements -->
-  <div class="container">
-
-    <!--Grid row-->
-    <div class="row">
-
-      <!--Grid column-->
-      <div class="col-md-6 mb-4">
-
-        <!-- Form -->
-        <form class="form-inline">
-          <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-            aria-label="Search">
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </form>
-        <!-- Form -->
-
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-md-6 mb-4">
-
-        <form class="input-group">
-          <input type="text" class="form-control form-control-sm" placeholder="Your email"
-            aria-label="Your email" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
-          </div>
-        </form>
-
-      </div>
-      <!--Grid column-->
-
-    </div>
-    <!--Grid row-->
-
-  </div>
-  <!-- Footer Elements -->
+<footer id="contact" class="page-footer font-small special-color-dark pt-4 mt-5 bg-white">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2023 Copyright:
+    <a href="/"> wallamotop.com</a>
+    <p>Pedro Daniel Fernández Guerrero</p>
   </div>
   <!-- Copyright -->
 
@@ -220,6 +183,31 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <script>
+
+
+    function scrollOnClick(event, targetId) {
+        event.preventDefault();
+
+        const targetElement = document.querySelector(`#${targetId}`); // Obtén el elemento destino utilizando el ID
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+
+            // Agrega la clase 'active' al enlace clicado para resaltarlo
+            const links = document.querySelectorAll('.navbar a');
+            links.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            targetElement.classList.add('active');
+        }
+    }
+
+
+
+
         document.addEventListener('DOMContentLoaded', function () {
             // Recorremos las motos y para cada una iniciamos un contador
             @foreach($motos as $moto)
