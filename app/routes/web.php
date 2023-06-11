@@ -87,6 +87,8 @@ Route::post('/moto/{moto}', [SessionsController::class, 'madebid'])
     ->middleware('auth')
     ->name('moto.madebid');
 
+    
+
 
 
 Route::get('/google', [SessionsController::class, 'google']);
@@ -94,6 +96,9 @@ Route::get('/google', [SessionsController::class, 'google']);
 
 
 
+
+Route::get('/formularioPago', [SessionsController::class, 'mostrarFormularioPago'])
+    ->name('formularioPago');
 
 // Ruta para pagos
 Route::post('/pago', [SessionsController::class, 'pago'])

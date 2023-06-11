@@ -155,11 +155,14 @@
 
 
 <!-- Footer -->
-<footer id="contact" class="page-footer font-small special-color-dark pt-4 mt-5 bg-white">
+<footer id="contact" class="page-footer font-small special-color-dark">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2023 Copyright:
-    <a href="/"> wallamotop.com</a>
+  <div class="footer-copyright text-center pt-2 pb-1">© 2023 Copyright:
+    <a href="/"> wallamotop.com</a> <br>
+    <i class="fas fa-envelope">  pedrodanielfg@gmail.com</i> <br>
+    <i class="fas fa-envelope">  pfergue349@g.educaand.es</i> <br>
+    <i class="fas fa-phone">  +34 727 71 02 81</i>
     <p>Pedro Daniel Fernández Guerrero</p>
   </div>
   <!-- Copyright -->

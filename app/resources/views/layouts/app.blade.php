@@ -37,21 +37,21 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link mx-3 active" aria-current="page" href="#" style="font-size: larger;">Home</a>
+          <a class="nav-link mx-3 active" aria-current="page" href="{{ URL::previous() }}" style="font-size: larger;">Home</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link mx-3" href="#" style="font-size: larger;">Products</a>
-        </li>
+        </li> -->
         <li class="nav-item d-none d-lg-block" style="padding-top: 10px;">
           <a class="nav-link mx-3" href="#">
             <img src="{{ asset('images/locorojoCopia.png') }}" width="90px" height="90px" style="border-radius: 13%;">
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-3" href="#" style="font-size: larger; ">Pricing</a>
+          <a class="nav-link mx-3" href="{{ route('login.index') }}" style="font-size: larger; ">Salir</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link mx-3 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: larger;">
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link mx-3 dropdown-toggle" href="{{ route('login.index') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: larger;">
             Company
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -59,7 +59,7 @@
             <li><a class="dropdown-item" href="#">About Us</a></li>
             <li><a class="dropdown-item" href="#">Contact us</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
   <!-- </div> -->

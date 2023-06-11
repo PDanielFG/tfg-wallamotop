@@ -99,6 +99,11 @@ class SessionsController extends Controller
         return back();
     }
 
+    public function mostrarFormularioPago()
+    {
+        return view('pago');
+    }
+
     
     public function pago(Request $request)
     {
@@ -122,6 +127,11 @@ class SessionsController extends Controller
             return redirect()->back()->with('error', $e->getMessage());
         }
     }
+
+
+    //Ruta para volver atrás
+
+
 
 
 }
