@@ -49,6 +49,9 @@ Route::get('/', [SessionsController::class, 'mostrarMotos'])
     ->middleware('auth')            //middleware authenticate
     ->name('user.mostrarMotos');
 
+Route::get('/mails', [SessionsController::class, 'getEmail']);  //si la url es /mails a secas no funciona xd, depende del nombre, aqui arriba si funciona
+
+
 
 //ruta dinamica para crear la vista de cada moto individual
 Route::get('/{moto:id}', [SessionsController::class, 'show'])
@@ -78,23 +81,13 @@ Route::put('/motos/{moto}', [AdminController::class, 'update'])
     ->name('motoAdmin.update');
     
 
-//Ruta para establecer puja
-// Route::get('/moto/{moto}/bid', [SessionsController::class, 'bid'])
-//     ->middleware('auth')
-//     ->name('moto.bid');
 
 Route::post('/moto/{moto}', [SessionsController::class, 'madebid'])
     ->middleware('auth')
     ->name('moto.madebid');
 
-    
-
-
-
+//login google    
 Route::get('/google', [SessionsController::class, 'google']);
-
-
-
 
 
 Route::get('/formularioPago', [SessionsController::class, 'mostrarFormularioPago'])
@@ -104,5 +97,7 @@ Route::get('/formularioPago', [SessionsController::class, 'mostrarFormularioPago
 Route::post('/pago', [SessionsController::class, 'pago'])
     ->name('pago');
 
+
+Route::get('register/verify/{code}', [RegisterController::class, 'verify']);
 
   

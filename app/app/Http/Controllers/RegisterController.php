@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -12,20 +13,49 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
+
+
     public function store()
     {
-
         $this->validate(request(), [
-            'name'=>'required',
-            'email'=>'required|email',
-            'password'=>'required|confirmed',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
         ]);
-
-        $user=User::create(request(['name', 'email', 'password'])); //Almacenamos en $user, lo que obtenemos del formulario de los campos con nombre name, email, password
-
-        auth()->login($user);		//Cuando nos registremos nos inicie sesion
-        return redirect()->to('/login');	//Redireccionamos a la pagina raíz
+    
+        $confirmationCode = Str::random(25);
+    
+        $user = User::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password')),
+            'confirmation_code' => $confirmationCode
+        ]);
+    
+        Mail::send('confirmation_code', ['confirmation_code' => $confirmationCode], function($message) use ($user) {
+            $message->to($user->email, $user->name)->subject('Por favor confirma tu correo');
+        });
+    
+        auth()->login($user);
+        return redirect()->to('/login');
     }
+    
+    public function verify($code)
+    {
+        $user = User::where('confirmation_code', $code)->first();
+
+        if(! $user)
+        {
+            return redirect('/');
+        }
+
+        $user->confirmed=true;
+        $user->confirmation_code=null;
+        $user->save();
+
+        return redirect('/');
+    }
+
 
     public function google(Request $request)
     {

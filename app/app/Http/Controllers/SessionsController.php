@@ -12,6 +12,8 @@ use App\Models\User;
 use App\Models\Bid;
 use App\Models\Moto;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\TestMail;
+use Mail;
 
 
 
@@ -104,6 +106,11 @@ class SessionsController extends Controller
         return view('pago');
     }
 
+    public function getEmail()
+    {
+        $data = ['name'=>'DDani'];
+        Mail::to('pedrodanielfg@gmail.com')->send(new TestMail($data));
+    }
     
     public function pago(Request $request)
     {
