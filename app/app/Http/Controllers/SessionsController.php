@@ -12,7 +12,6 @@ use App\Models\User;
 use App\Models\Bid;
 use App\Models\Moto;
 use Illuminate\Support\Facades\Auth;
-use App\Mail\TestMail;
 use Mail;
 
 

@@ -38,6 +38,28 @@ body {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	font-family: 'Dancing Script', cursive;
   }
+
+  .verification-status {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 10px;
+	padding: 5px 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+.verification-status p {
+	margin: 0;
+	font-size: 14px;
+}
+.verified {
+	color: white;
+	background-color: green;
+}
+.not-verified {
+	color: white;
+	background-color: red;
+}
 /* Estilos base */
 .navbar {
 	background-color: black;

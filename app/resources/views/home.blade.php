@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/products.css') }}">
 
-
 </head>
 <body>
 
@@ -27,6 +26,13 @@
         <div id="slogan">
           <h1>Wallamotop</h1>
           <p>Interesados por el mundo de las dos ruedas, llegó vuestro sitio de pujas favorito</p>
+        </div>
+        <div class="verification-status">
+            @if(auth()->check() && auth()->user()->email_verified_at)
+                <p class="verified"> Estado de la cuenta: Verificada</p>
+            @else
+                <p class="not-verified">Estado de la cuenta: No Verificada</p>
+            @endif
         </div>
       </section>
 
