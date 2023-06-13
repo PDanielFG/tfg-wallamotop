@@ -106,11 +106,7 @@ class SessionsController extends Controller
         return view('pago');
     }
 
-    public function getEmail()
-    {
-        $data = ['name'=>'DDani'];
-        Mail::to('pedrodanielfg@gmail.com')->send(new TestMail($data));
-    }
+
     
     public function pago(Request $request)
     {

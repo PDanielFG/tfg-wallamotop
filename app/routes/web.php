@@ -49,8 +49,9 @@ Route::get('/', [SessionsController::class, 'mostrarMotos'])
     ->middleware('auth')            //middleware authenticate
     ->name('user.mostrarMotos');
 
-Route::get('/mails', [SessionsController::class, 'getEmail']);  //si la url es /mails a secas no funciona xd, depende del nombre, aqui arriba si funciona
+Route::get('/mails', [RegisterController::class, 'getEmail']);  //si la url es /mails a secas no funciona xd, depende del nombre, aqui arriba si funciona
 
+Route::get('/confirmation/{code}', [RegisterController::class, 'confirmEmail'])->name('confirmation');
 
 
 //ruta dinamica para crear la vista de cada moto individual
