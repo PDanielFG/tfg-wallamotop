@@ -54,6 +54,12 @@ Route::get('/mails', [RegisterController::class, 'getEmail']);  //si la url es /
 Route::get('/confirmation/{code}', [RegisterController::class, 'confirmEmail'])->name('confirmation');
 
 
+Route::get('/checkout/{moto}', [SessionsController::class, 'mostrarCheckout'])->name('checkout');
+
+Route::post('/procesar-pago', [SessionsController::class, 'procesarPago'])->name('procesar-pago');
+
+
+
 //ruta dinamica para crear la vista de cada moto individual
 Route::get('/{moto:id}', [SessionsController::class, 'show'])
     ->middleware('auth')

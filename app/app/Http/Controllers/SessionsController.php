@@ -12,7 +12,7 @@ use App\Models\User;
 use App\Models\Bid;
 use App\Models\Moto;
 use Illuminate\Support\Facades\Auth;
-use Mail;
+
 
 
 
@@ -54,7 +54,7 @@ class SessionsController extends Controller
     //Mostrar motos para usuario / 
     public function mostrarMotos()
     {
-        $motos = Moto::paginate(12);
+        $motos = Moto::paginate(6);
         $firstImages = [];
 
         foreach ($motos as $moto) {
@@ -100,38 +100,44 @@ class SessionsController extends Controller
         return back();
     }
 
-    public function mostrarFormularioPago()
+
+
+    public function mostrarCheckout($moto)
     {
-        return view('pago');
+        // Aquí deberías obtener el objeto de la moto basado en su ID o de alguna otra manera
+        $motoObjeto = Moto::find($moto);
+
+        // Verifica si se encontró la moto
+        if (!$motoObjeto) {
+            abort(404); // O maneja el caso cuando no se encuentra la moto de alguna otra manera
+        }
+
+        return view('checkout', compact('motoObjeto'));
     }
 
+    public function procesarPago(Request $request)
+    {
+        // Obtener el token de pago enviado desde el cliente
+        $token = $request->input('token');
+
+        // Obtener el precio de la moto a pagar
+        $precioMoto = $request->input('precioMoto');
+
+        // Realizar los cálculos necesarios con el token y el precio de la moto
+        // Aquí puedes realizar la lógica de procesamiento del pago y realizar cualquier otra acción necesaria
+
+        // Devolver una respuesta al cliente
+        return response()->json([
+            'message' => 'Pago procesado exitosamente',
+            // Aquí puedes incluir cualquier otro dato adicional que desees devolver al cliente
+        ]);
+    }
+
+
+
+ 
 
     
-    public function pago(Request $request)
-    {
-        Stripe::setApiKey(config('services.stripe.secret'));
-        
-        $token = $request->input('stripeToken');
-        $monto = 1000; // Aquí puedes establecer el monto del pago
-        
-        try {
-            $charge = Charge::create([
-                'amount' => $monto,
-                'currency' => 'usd',
-                'source' => $token,
-                'description' => 'Descripción del pago'
-            ]);
-            
-            // Aquí puedes agregar la lógica adicional después de que el pago se haya procesado correctamente
-            
-            return redirect()->back()->with('success', 'Pago exitoso.');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', $e->getMessage());
-        }
-    }
-
-
-    //Ruta para volver atrás
 
 
 

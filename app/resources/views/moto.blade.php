@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         @if (auth()->check() && $moto->highest_bid_user_id === auth()->id())
-                                            <a href="#" id="btnAnadir" class="disabled btn btn-success w-100">Comprar</a>
+                                            <a href="{{ route('checkout', ['moto' => $moto]) }}" id="btnAnadir" class="disabled btn btn-success w-100">Comprar</a>
                                         @else
                                             <a href="#" class="btn btn-success w-100 disabled">Comprar</a>
                                         @endif
