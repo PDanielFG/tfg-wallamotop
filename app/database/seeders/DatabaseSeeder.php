@@ -14,30 +14,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = new User;
-        $user->name = 'Admin';
-        $user->email = 'admin@test.com';
-        $user->password = '1234';
-        $user->role = 'admin';
+        if (User::count() === 0) 
+        {
 
-        $user->save();
+            $user = new User;
+            $user->name = 'Admin';
+            $user->email = 'admin@test.com';
+            $user->password = '1234';
+            $user->role = 'admin';
 
-        
-        $newUser = new User;
-        $newUser->name = 'daniel';
-        $newUser->email = 'daniel.pdfg@gmail.com';
-        $newUser->password = '123';
-        $newUser->role = '';
+            $user->save();
 
-        $newUser->save();
+            
+            $newUser = new User;
+            $newUser->name = 'daniel';
+            $newUser->email = 'daniel.pdfg@gmail.com';
+            $newUser->password = '123';
+            $newUser->role = '';
 
-        $newUser2 = new User;
-        $newUser2->name = 'prueba';
-        $newUser2->email = 'prueba@gmail.com';
-        $newUser2->password = '123';
-        $newUser2->role = '';
-        
-        $newUser2->save();
+            $newUser->save();
+
+            $newUser2 = new User;
+            $newUser2->name = 'prueba';
+            $newUser2->email = 'prueba@gmail.com';
+            $newUser2->password = '123';
+            $newUser2->role = '';
+            
+            $newUser2->save();
+        }
 
 
 

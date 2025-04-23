@@ -57,11 +57,11 @@
                                 </div>
                                 <div class="align-items-center align-content-center col-md-3 border-left mt-2">
                                     <div class="d-flex flex-row align-items-center">
-                                        <h4 class="mr-1">Precio Inicial: </h4><span class="strike-text">{{$moto->starting_price}} €</span>
+                                        <h4 class="mr-1">Puja Inicial: </h4><span class="strike-text">{{$moto->starting_price}} €</span>
                                     </div>
                                     
                                     <div class="d-flex flex-row align-items-center">
-                                        <h4 class="mr-1">Precio actual de la puja: </h4><span class="strike-text">{{$moto->highest_bid}} €</span>
+                                        <h4 class="mr-1">Puja actual: </h4><span class="strike-text">{{$moto->highest_bid}} €</span>
                                     </div>
                                     
 
