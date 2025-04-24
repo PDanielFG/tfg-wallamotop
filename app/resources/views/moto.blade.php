@@ -52,7 +52,7 @@
                                 <hr class="p-0 m-0">
                             </div>
                             <div class="col-lg-12 pt-2">
-                                <h5>Product Detail</h5>
+                                <h5>Detalles del producto</h5>
                                 <span>{{$moto->description}}</span>
                                 <hr class="m-0 pt-2 mt-2">
                             </div>
