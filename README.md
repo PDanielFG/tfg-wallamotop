@@ -23,10 +23,11 @@ Algunos requisitos funcionales destacables del poryecto son:
 Para más detalles o imágenes de la web, consulte el enlace de github.
 
 # Videos de la aplicación web.
-## Panel de administración y navegabilidad
+## Operación con los productos, pujas y navegabilidad
+https://github.com/user-attachments/assets/426ad67c-0330-434c-ab44-c22e0bcb2670
+
+## Panel de administración y operaciones de admin
 https://github.com/user-attachments/assets/dbb78ebd-858d-4ac3-9c92-3285e4b4b121
 
 
-## Operación con los productos y pujas
-https://github.com/user-attachments/assets/426ad67c-0330-434c-ab44-c22e0bcb2670
 
