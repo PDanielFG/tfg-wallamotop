@@ -24,7 +24,7 @@ Para más detalles o imágenes de la web, consulte el enlace de github.
 
 # Videos de la aplicación web.
 ## Visualización general de la web
-https://github.com/user-attachments/assets/36d6b654-03f0-4e4b-85d5-da61a4706eb8
+https://github.com/user-attachments/assets/67908b12-f59d-4f78-883f-a3783f537b06
 
 ## Operación con los productos, pujas y navegabilidad
 https://github.com/user-attachments/assets/426ad67c-0330-434c-ab44-c22e0bcb2670
